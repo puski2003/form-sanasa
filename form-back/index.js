@@ -23,36 +23,37 @@ const db = mysql.createConnection({
 
 
 app.post("/",(req,res)=>{
+console.log(req.body);
 
- const {
-    fullName,
-    NIC,
-    passport,
-    license,
-    Country,
-    nationality,
-    POB,
-    BCountry,
-    isCitizen,
-    CCountry,
-    mobile,
-    email
-  } = req.body;
-  console.log(fullName)
-  const sql = `
-  INSERT INTO user 
-  (fullName, NIC, passport, license, Country, nationality, POB, BCountry,   CCountry, mobile, email,isCitizen) 
-  VALUES 
-  ('${fullName}', '${NIC}', '${passport}', '${license}', '${Country}', '${nationality}', '${POB}', '${BCountry}', '${CCountry}', '${mobile}', '${email}','${isCitizen}')
-`;
-    db.query(sql,(err)=>{
-        if(err){
+//  const {
+//     fullName,
+//     NIC,
+//     passport,
+//     license,
+//     Country,
+//     nationality,
+//     POB,
+//     BCountry,
+//     isCitizen,
+//     CCountry,
+//     mobile,
+//     email
+//   } = req.body;
+//   console.log(fullName)
+//   const sql = `
+//   INSERT INTO user 
+//   (fullName, NIC, passport, license, Country, nationality, POB, BCountry,   CCountry, mobile, email,isCitizen) 
+//   VALUES 
+//   ('${fullName}', '${NIC}', '${passport}', '${license}', '${Country}', '${nationality}', '${POB}', '${BCountry}', '${CCountry}', '${mobile}', '${email}','${isCitizen}')
+// `;
+//     db.query(sql,(err)=>{
+//         if(err){
             
-            return res.json(`A Error occured : ${err}`)
+//             return res.json(`A Error occured : ${err}`)
 
-        }
+//         }
        
-    })
+//     })
 
  res.send("Data received successfully!");
 
